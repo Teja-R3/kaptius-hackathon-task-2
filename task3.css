@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+.total-amount {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.form-container {
+    display: none;
+    margin-top: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+#totalAmountContainer span {
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+#totalAmountContainer .positive {
+    background-color: green;
+    color: white;
+}
+
+#totalAmountContainer .negative {
+    background-color: red;
+    color: white;
+}
+
+.expense-row {
+    background-color: red;
+}
+
+.income-row {
+    background-color: #ddffdd;
+}

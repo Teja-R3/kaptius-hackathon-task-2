@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Income and Expenditure Tracker</title>
+    <link rel="stylesheet" href="task3.css">
+</head>
+<body>
+    <div class="container">
+         <!-- basically it encapsulates all the module -->
+        <h1>Income and Expenditure Tracker</h1>
+        <div class="total-amount" id="totalAmountContainer">
+            <label>Total Amount: </label>
+            <span id="totalAmount">0.00</span>
+             <!-- Placeholder for the total amount value where it gives the final calculation -->
+        </div>
+        <button onclick="showForm('expenditureForm')">Add Expenditure</button>
+        <button onclick="showForm('incomeForm')">Add Income</button>
+        <button onclick="showTotalPage()">View Total Amount</button>
+        <!-- Buttons to open the respective pages -->
+        <!-- here it triggers the page because these are on-click attributes -->
+
+        <div class="form-container" id="expenditureForm">
+            <h2>Add Expenditure</h2>
+            <form onsubmit="addTransaction(event, 'expenditure')">
+                <!-- here it trigers the add transaction function in expenditure and upadtes the list -->
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" step="0.01" required>
+                <button type="submit">Submit</button>
+                <!-- this is used to gather the input from users through labels and return to the form -->
+            </form>
+        </div>
+
+        <div class="form-container" id="incomeForm">
+            <h2>Add Income</h2>
+            <form onsubmit="addTransaction(event, 'income')">
+                <!-- here it trigers the add transaction function in incomeand upadtes the list -->
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" required>
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" step="0.01" required>
+                <button type="submit">Submit</button>
+                <!-- this is used to gather the input from users through labels and return to the form -->
+            </form>
+        </div>
+
+        <h2>Expenditure</h2>
+        <input type="date" id="expenditureFilter" oninput="filterTable('expenditureTable', 'expenditureFilter')">
+        <!-- here it takes the input from the expenditure and income tables and form the structure here -->
+        <table id="expenditureTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <!-- these are the table headings -->
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+
+        <h2>Income</h2>
+        <input type="date" id="incomeFilter" oninput="filterTable('incomeTable', 'incomeFilter')">
+         <!-- here it takes the input from the expenditure and income tables and form the structure here -->
+        <table id="incomeTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <!-- these are the table headings -->
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="task3.js"></script>
+</body>
+</html>
